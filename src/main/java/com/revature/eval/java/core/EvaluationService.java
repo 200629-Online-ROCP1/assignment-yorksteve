@@ -119,7 +119,11 @@ public class EvaluationService
 	 */
 	public boolean shouldWakeUp(boolean isBarking, int hourOfDay) 
 	{
-		if ((isBarking = true && hourOfDay < 8) || (isBarking = true && hourOfDay > 22))
+		if (isBarking = true && hourOfDay < 8)
+		{
+			return true;
+		}
+		else if (isBarking = true && hourOfDay > 22)
 		{
 			return true;
 		}
@@ -146,7 +150,13 @@ public class EvaluationService
 	 */
 	public boolean areEqualByThreeDecimalPlaces(double firstNum, double secondNum) 
 	{
-		// TODO Write an implementation for this method declaration
+		
+		
+		if (firstNum == secondNum)
+		{
+			return true;
+		}
+		
 		return false;
 	}
 
