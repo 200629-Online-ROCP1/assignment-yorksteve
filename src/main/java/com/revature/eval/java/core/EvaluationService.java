@@ -92,10 +92,12 @@ public class EvaluationService
 		}
 		else
 		{
+			double YY = Math.floor(XX/1000);
+			double ZZ = (XX - (YY * 1000)) - 48;
+			
+			return (XX + " KB = " + YY + " MB and " + ZZ + " KB.");
 			
 		}
-		// TODO Write an implementation for this method declaration
-		return null;
 	}
 
 	/**
@@ -150,14 +152,18 @@ public class EvaluationService
 	 */
 	public boolean areEqualByThreeDecimalPlaces(double firstNum, double secondNum) 
 	{
+		double firstNumRound = Math.round(firstNum * 1000) / 1000;
+		double secondNumRound = Math.round(secondNum * 1000) / 1000;
 		
-		
-		if (firstNum == secondNum)
+		if (firstNumRound == secondNumRound)
 		{
 			return true;
 		}
 		
-		return false;
+		else
+		{
+			return false;
+		}
 	}
 
 	/**
@@ -175,8 +181,14 @@ public class EvaluationService
 
 		public static boolean hasTeen(int x, int y, int z) 
 		{
-			// TODO Write an implementation for this method declaration
-			return false;
+			if (isTeen(x) == true || isTeen(y) == true || isTeen(z) == true)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 
 		// We can initialize isTeen method first
@@ -184,8 +196,15 @@ public class EvaluationService
 
 		public static boolean isTeen(int number) 
 		{
-			// TODO Write an implementation for this method declaration
-			return false;
+			if (number <= 19 && number >= 13)
+			{
+				return true;
+			}
+
+			else
+			{
+				return false;
+			}			
 		}
 	}
 
@@ -206,8 +225,25 @@ public class EvaluationService
 	 */
 	public String printYearsAndDays(long minutes) 
 	{
-		// TODO Write an implementation for this method declaration
-		return null;
+		long XX = minutes;
+		
+		double YY = Math.floor(XX / 525600);
+		
+		double days = (XX / 525600) - YY;
+		
+		double ZZ = days * 365.25;
+		
+		
+		
+		if (minutes < 0)
+		{
+			return "Invalid Value";
+		}
+		
+		else
+		{
+			return (XX + " min = " + YY + " y and " + ZZ + " d");
+		}
 	}
 
 	/**
